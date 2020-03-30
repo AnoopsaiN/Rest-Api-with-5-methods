@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<link rel = "Stylesheet" type="text/css" href = "../assets/css/customstyle.css">
+</head>
+<body>
+    <%- include ('partials/header.ejs') %>
+    
+    <div id="div" >
+        <form id ="contact" method="POST" action =/update>
+            <label >Trip Topic</label>
+            <input type ="text" name="triptopic" value="<%-data.triptopic%>">
+            <br><br>
+            <label >Place</label>
+            <input type ="text" name="connection" value="<%-data.connection%>">
+            <br><br>
+            <label >Rsvp</label>
+            <input type ="text" name="rsvp" value="<%-data.rsvp%>">
+            <br><br>
+           
+            <input type ="text" name="TripId" value="<%-data.TripId%>">
+            <br><br>
+
+            <input type="submit" value="UPDATE">
+            </form> 
+
+    </div>
+    <%- include ('partials/footer.ejs') %>
+ 
+		</body>
+		</html>

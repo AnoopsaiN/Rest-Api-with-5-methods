@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<link rel = "Stylesheet" type="text/css" href = "../assets/css/customstyle.css">
+</head>
+<body>
+    <%- include ('partials/header.ejs') %>
+    
+    <div id="div" >
+        <form id ="contact" method="POST" action="/rsvp" >
+            <label >Trip Topic</label>
+            <input type ="text" name="triptopic" value="">
+            <br><br>
+            <label >Place</label>
+            <input type ="text" name="connection" value="">
+            <br><br>
+            <label >Rsvp</label>
+            <input type ="text" name="rsvp" value="">
+            <br><br>
+            <label >TripId</label>
+            <input type ="text" name="TripId" value="">
+            <br><br>
+
+            <input type="submit" value="Create Trip">
+            </form> 
+
+    </div>
+    <%- include ('partials/footer.ejs') %>
+ 
+		</body>
+		</html>
