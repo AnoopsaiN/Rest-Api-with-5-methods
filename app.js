@@ -110,12 +110,12 @@ app.get('/mytrips', function(req,res){
   
   app.post('/update',function(req,res){
    
-    patch =req.body
-    console.log(patch);
+    put =req.body
+    console.log(put);
     
     fetch('http://64.225.28.35:3000/api/v1/savedConnections',{
-      method: 'PATCH',
-      body: JSON.stringify(patch),
+      method: 'PUT',
+      body: JSON.stringify(put),
       headers: { 'Content-Type': 'application/json' },
       })
       .then(res => res.json()).then(json => {  res.redirect('/mytrips');})

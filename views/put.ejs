@@ -4,32 +4,27 @@
 <meta charset="utf-8">
 <title>index</title>
 <link rel = "Stylesheet" type="text/css" href = "../assets/css/customstyle.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-const puttrip = function(tripid,rsp){
-     console.log('entered script');
-     console.log(tripid);
-     //var trip = {tripi : tripid}
-        $.ajax({
-            url: 'http://64.225.28.35:8081/api/v1/savedConnections/',
-            contentType: "application/json",
-            dataType: 'json',
-            type: "PUT",
-            data: JSON.stringify({ "connection": tripid,"rsvp":rsp }),
-            success: function(result){
-        window.location.href = '/mytrips';
-      }
-    })
-    }
-    </script>
 </head>
 <body>
     <%- include ('partials/header.ejs') %>
     
     <div id="div" >
-         <button onclick="puttrip('<%= data.connection%>','yes')">YES</button>
-                    <button onclick="puttrip('<%= data.connection%>','no')">NO</button>
-                    <button onclick="puttrip('<%= data.connection%>','maybe')">MAYBE</button>
+        <form id ="contact" method="POST" action =/update>
+            <label >Trip Topic</label>
+            <input type ="text" name="triptopic" value="<%-data.triptopic%>">
+            <br><br>
+            <label >Place</label>
+            <input type ="text" name="connection" value="<%-data.connection%>">
+            <br><br>
+            <label >Rsvp</label>
+            <input type ="text" name="rsvp" value="<%-data.rsvp%>">
+            <br><br>
+           
+            <input type ="hidden" name="TripId" value="<%-data.TripId%>">
+            <br><br>
+
+            <input type="submit" value="UPDATE">
+            </form> 
 
     </div>
     <%- include ('partials/footer.ejs') %>

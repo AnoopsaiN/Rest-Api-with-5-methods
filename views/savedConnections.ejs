@@ -11,7 +11,7 @@ const deletetrip = function(tripid){
      console.log(tripid);
      var trip = {tripi : tripid}
         $.ajax({
-            url: 'http://64.225.28.35:8081/api/v1/savedConnections/',
+            url: 'http://64.225.28.35:3000/api/v1/savedConnections/',
             contentType: "application/json",
             dataType: 'json',
             type: "DELETE",
@@ -41,8 +41,8 @@ const deletetrip = function(tripid){
                  <td><a class="col3"><%- data[i].connection %></a></td>
                  <td><%- data[i].triptopic %></td>
                  <td><%- data[i].rsvp %></td>
-                 <td>  <button onclick="location.href='/connection?TripId=<%= data[i].TripId%>'">Update Rsvp</button>
-                    <button onclick="location.href='/connections?TripId=<%= data[i].TripId%>'">Update</button>
+                 <td>  <button onclick="location.href='/connection?TripId=<%= data[i].TripId%>'">Update</button>
+                    <button onclick="location.href='/connections?TripId=<%= data[i].TripId%>'">Update Rsvp</button>
                     <button onclick=" deletetrip('<%= data[i].TripId%>')">Delete</button></td>
             </tr> 
             <% } %>

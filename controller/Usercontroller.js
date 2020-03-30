@@ -83,7 +83,7 @@ router.delete('/', (req, res) =>{
 /**
 * @swagger
 * /api/v1/savedConnections:
-*   put:
+*   patch:
 *     description: update an particular trip
 *     parameters:
  *       - name: connection
@@ -98,7 +98,7 @@ router.delete('/', (req, res) =>{
 *       '200':
 *         description: OK
 */
-router.put('/', (req, res) =>{
+router.patch('/', (req, res) =>{
     console.log("put: ", req.body.connection,req.body.rsvp);
     userprofile.updatetosc(req.body.connection,req.body.rsvp);
     res.send(userprofile.completeuserconnection) ;
@@ -108,7 +108,7 @@ router.put('/', (req, res) =>{
 /**
 * @swagger
 * /api/v1/savedConnections:
-*   patch:
+*   put:
 *     description: update an particular trip
 *     parameters:
  *       - name: connection
@@ -132,8 +132,8 @@ router.put('/', (req, res) =>{
 *         description: OK
 */
 
-router.patch('/', (req, res) =>{
-  console.log("patch: ", req.body.connection,req.body.rsvp,req.body.TripId,req.body.triptopic);
+router.put('/', (req, res) =>{
+  console.log("put: ", req.body.connection,req.body.rsvp,req.body.TripId,req.body.triptopic);
   userprofile.fullupdatetosc(req.body.connection,req.body.rsvp,req.body.TripId,req.body.triptopic);
   res.send(userprofile.completeuserconnection) ;
   

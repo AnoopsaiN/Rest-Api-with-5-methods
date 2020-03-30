@@ -17,9 +17,8 @@ var completeuserconnection = [{
     rsvp: 'maybe',
     triptopic: 'AbroadTrips',
     TripId: 't3'
-  }];
-
-  var completeuserconnectionv2 = [{
+  },
+{
     connection: 'Araku Trekking',
     rsvp: 'maybe',
     triptopic: 'WeekendTrips',
