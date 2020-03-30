@@ -30,7 +30,7 @@ const swaggerOptions ={
         name:'Anoop Narne'
       },
       basePath:"/api/v1",
-      servers:["http://64.225.28.35:8081"]
+      servers:["http://64.225.28.35:3000"]
     }
   },
   apis: ['./controller/Usercontroller.js']
@@ -56,7 +56,7 @@ app.get('/newConnection',function(req,res){
 
 
 app.get('/mytrips', function(req,res){
-  fetch('http://64.225.28.35:8081/api/v1/savedConnections').then(res => res.json()).then(json =>{
+  fetch('http://64.225.28.35:3000/api/v1/savedConnections').then(res => res.json()).then(json =>{
    
     res.render('savedConnections',{data: json})
   })
@@ -65,7 +65,7 @@ app.get('/mytrips', function(req,res){
   
   app.post('/rsvp',function(req,res){
     query = req.body;
-    fetch('http://64.225.28.35:8081/api/v1/savedConnections',{
+    fetch('http://64.225.28.35:3000/api/v1/savedConnections',{
       method: 'POST',
       body: JSON.stringify(query),
       headers: { 'Content-Type': 'application/json' },
@@ -78,7 +78,7 @@ app.get('/mytrips', function(req,res){
     query=req.body
     console.log(query);
     
-    fetch('http://64.225.28.35:8081/api/v1/savedConnections',{
+    fetch('http://64.225.28.35:3000/api/v1/savedConnections',{
       method: 'DELETE',
       body: JSON.stringify(query),
       headers: { 'Content-Type': 'application/json' },
@@ -113,7 +113,7 @@ app.get('/mytrips', function(req,res){
     patch =req.body
     console.log(patch);
     
-    fetch('http://64.225.28.35:8081/api/v1/savedConnections',{
+    fetch('http://64.225.28.35:3000/api/v1/savedConnections',{
       method: 'PATCH',
       body: JSON.stringify(patch),
       headers: { 'Content-Type': 'application/json' },
@@ -121,6 +121,6 @@ app.get('/mytrips', function(req,res){
       .then(res => res.json()).then(json => {  res.redirect('/mytrips');})
   
   })
-  app.listen(8081);
+  app.listen(3000);
   
   
